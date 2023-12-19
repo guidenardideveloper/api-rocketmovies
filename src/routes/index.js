@@ -10,6 +10,6 @@ const routes = Router();
 routes.use("/users", usersRouter);
 routes.use("/movie_notes", MovieNotesRouter);
 routes.use("/tags", tagsRouter);
-routes.use("/sesssions", sessionsRouter);
+routes.use("/sessions", sessionsRouter);
 
 module.exports = routes;
