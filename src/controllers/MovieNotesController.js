@@ -67,13 +67,13 @@ class MovieNotesController {
             .where("movieNotes.user_id", user_id)
             .whereLike("movieNotes.title", `%${title}%`)
             .innerJoin("tags", "movieNotes.id", "tags.movie_id")
-            .orderBy("movieNotes.title")
-            .groupBy("movieNotes.title")
+            .orderBy("movieNotes.created_at", 'desc')
+            .groupBy("movieNotes.id")
         } else {
             movieNotes = await knex("movieNotes")
             .where({user_id})
             .whereLike("title", `%${title}%`)
-            .orderBy("title")
+            .orderBy("created_at", "desc")
             .groupBy("movieNotes.title")
         }
         
