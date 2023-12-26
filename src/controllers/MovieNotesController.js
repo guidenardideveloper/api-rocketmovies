@@ -40,7 +40,7 @@ class MovieNotesController {
 
 
     async delete(request, response) {
-        const {id} = request.params;
+        const { id } = request.params;
 
         await knex("movieNotes").where({id}).delete();
 
